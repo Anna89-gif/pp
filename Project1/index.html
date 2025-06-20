@@ -1,0 +1,155 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курсы по рисованию</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; background-color: #e0e0e0; color: #333; }
+        .header { background-color: #f0f0f0; padding: 15px; text-align: center; box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); }
+        .header nav { display: flex; justify-content: space-around; align-items: center; font-size: 18px; }
+        .header a { text-decoration: none; color: #333; padding: 10px; }
+        .header a:hover { color: #007acc; }
+        .header img { width: 150px; height: 150px; object-fit: cover;}
+        .banner { display: flex; align-items: center; justify-content: center; width: 100%; height: 400px; background-color: #ffffff; position: relative; overflow: hidden; }
+        .banner img { width: 100%; height: 100%; object-fit: cover; }
+        .arrow { position: absolute; font-size: 36px; color: #333; cursor: pointer; }
+        .arrow.left { left: 20px; }
+        .arrow.right { right: 20px; }
+        .arrow:hover { color: #007acc; }
+        .auth-section { padding: 20px; display: flex; justify-content: space-around; background-color: #f9f9f9; }
+        .auth-form { background-color: #ffffff; padding: 20px; border: 1px solid #ddd; border-radius: 5px; width: 300px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+        .auth-form h2 { text-align: center; margin-bottom: 15px; color: #333; }
+        .auth-form label { display: block; margin-bottom: 5px; color: #666; }
+        .auth-form input[type="text"], .auth-form input[type="password"] { width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; }
+        .auth-form button { width: 100%; padding: 10px; background-color: #007acc; color: #ffffff; border: none; border-radius: 4px; cursor: pointer; }
+        .auth-form button:hover { background-color: #005f99; }
+        .success-message { text-align: center; margin-top: 20px; color: green; font-size: 18px; }
+        .error-message { text-align: center; margin-top: 20px; color: red; font-size: 18px; }
+    </style>
+
+    <script>
+        const users = {}; // Объект для хранения зарегистрированных пользователей
+
+        function registerUser() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username === "" || password === "") {
+                alert("Пожалуйста, заполните все поля");
+                return false;
+            }
+
+            if (users[username]) {
+                alert("Пользователь с таким именем уже существует");
+                return false;
+            }
+
+            users[username] = password;
+            document.getElementById("message").innerText = "Вы зарегистрированы!";
+            document.getElementById("message").className = "success-message";
+            return false;
+        }
+
+        function loginUser() {
+            const username = document.getElementById("login-username").value;
+            const password = document.getElementById("login-password").value;
+
+            if (username === "" || password === "") {
+                alert("Пожалуйста, заполните все поля");
+                return false;
+            }
+
+            if (!users[username]) {
+                document.getElementById("message").innerText = "Неправильное имя или пароль";
+                document.getElementById("message").className = "error-message";
+                return false;
+            }
+
+            if (users[username] !== password) {
+                document.getElementById("message").innerText = "Неправильное имя или пароль";
+                document.getElementById("message").className = "error-message";
+                return false;
+            }
+
+            document.getElementById("message").innerText = "Вы вошли в свой аккаунт!";
+            document.getElementById("message").className = "success-message";
+            return false;
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <nav>
+          
+            <a href="index.html">
+                <img src="3.gif" alt="Логотип">
+            </a>
+            <a href="directions.html">Направления</a>
+            <a href="schedule.html">Расписание</a>
+            <a href="prices.html">Услуги и цены</a>
+            <a href="about.html">О нас</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
+    </header>
+
+    <!-- Banner Section -->
+    <section class="banner">
+        <img src="баннер.jpg" alt="баннер" class="large-image">
+    </section>
+
+    <!-- Registration and Login Section -->
+    <div class="auth-section">
+        <!-- Registration Form -->
+        <div class="auth-form">
+            <h2>Регистрация</h2>
+            <form id="registerForm" onsubmit="return registerUser()">
+                <label for="username">Имя пользователя</label>
+                <input type="text" name="username" id="username" placeholder="Введите имя пользователя">
+                
+                <label for="password">Пароль</label>
+                <input type="password" name="password" id="password" placeholder="Введите пароль">
+                
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+        
+        <!-- Login Form -->
+        <div class="auth-form">
+            <h2>Вход</h2>
+            <form id="loginForm" onsubmit="return loginUser()">
+                <label for="login-username">Имя пользователя</label>
+                <input type="text" name="username" id="login-username" placeholder="Введите имя пользователя">
+                
+                <label for="login-password">Пароль</label>
+                <input type="password" name="password" id="login-password" placeholder="Введите пароль">
+                
+                <button type="submit">Войти</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Message Display -->
+    <div id="message" class="success-message"></div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

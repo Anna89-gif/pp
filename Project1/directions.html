@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Направления - Курсы по рисованию</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; background-color: #e0e0e0; color: #333; }
+        .header { background-color: #f0f0f0; padding: 15px; text-align: center; box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); }
+        .header nav { display: flex; justify-content: space-around; align-items: center; font-size: 18px; }
+        .header img { width: 150px; height: 150px; object-fit: cover;}
+        .header a { text-decoration: none; color: #333; padding: 10px; }
+        .header a:hover { color: #007acc; }
+        .content { padding: 20px; }
+         /* Центрирование заголовка */
+        .content h1 {
+            text-align: center; /* Выравнивание текста по центру */
+            margin-bottom: 20px; /* Отступ снизу */
+    font-size: 36px; /* Размер шрифта */
+
+        }
+        /* Стили для галереи */
+        .gallery { 
+            display: flex; 
+            flex-wrap: wrap; /* Перенос на новую строку */
+            justify-content: space-between; /* Равномерное распределение */
+            gap: 15px; /* Расстояние между картинками */
+        }
+        .gallery-item { 
+            text-align: center; 
+            flex: 1 1 calc(33.333% - 15px); /* Три картинки в ряд */
+            box-sizing: border-box; 
+        }
+        .gallery-item img { 
+            width: 100%; /* Ширина картинки на всю ширину контейнера */
+            height: 400px; /* Фиксированная высота */
+            object-fit: cover; /* Сохраняет пропорции */
+            border-radius: 10px; 
+        }
+        .gallery-item a { text-decoration: none; color: #333; }
+        .gallery-item a:hover { color: #007acc; }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <nav>
+            <a href="index.html">
+                <img src="3.gif" alt="Логотип">
+            </a>
+            
+            <a href="directions.html">Направления</a>
+            <a href="schedule.html">Расписание</a>
+            <a href="prices.html">Услуги и цены</a>
+            <a href="about.html">О нас</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
+    </header>
+
+    <!-- Content Section -->
+    <div class="content">
+        <h1>Направления</h1>
+        <div class="gallery">
+            <div class="gallery-item">
+                <a href="painting.html" target="_blank">
+                    <img src="живопись2.jpg" alt="Живопись"  style="width: 400px; height: 400px; object-fit: cover;">
+                    <p>Живопись</p>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="graphics.html" target="_blank">
+                    <img src="графика.jpg" alt="Графика" style="width: 400px; height: 400px; object-fit: cover;" >
+                    <p>Графика</p>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="kids-art.html" target="_blank">
+                    <img src="детское.jpg" alt="Детское ИЗО" style="width: 400px; height: 400px; object-fit: cover;">
+                    <p>Детское ИЗО</p>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="illustration.html" target="_blank">
+                    <img src="иллюстрация.jpg" alt="Иллюстрация" style="width: 400px; height: 400px; object-fit: cover;">
+                    <p>Иллюстрация</p>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="composition.html" target="_blank">
+                    <img src="композиция.jpg" alt="Композиция" style="width: 400px; height: 400px; object-fit: cover;">
+                    <p>Композиция</p>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="master-classes.html" target="_blank">
+                    <img src="мастер-классы.jpg" alt="Мастер-классы" style="width: 400px; height: 400px; object-fit: cover;">
+                    <p>Мастер-классы</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
